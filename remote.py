@@ -10,9 +10,9 @@ app = Flask(__name__)
 # This route accepts a get request containing params
 # for sending an IR code once
 def send_once():
-	remote = request.remote
-	code = request.code
-
+	remote = request.args.get('remote', '')
+	code = request.args.get('code', '')
+	
 	subprocess.call(["irsend", remote, code])
 	return 'sent once '+ remote + ' ' + code, 200
 

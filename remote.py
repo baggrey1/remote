@@ -13,7 +13,7 @@ def send_once():
 	remote = request.args.get('remote', '')
 	code = request.args.get('code', '')
 	
-	subprocess.call(["irsend", remote, code])
+	subprocess.call(["irsend", "send_once", remote, code])
 	return 'sent once '+ remote + ' ' + code, 200
 
 if __name__ == "__main__":

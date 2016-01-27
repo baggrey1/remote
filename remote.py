@@ -2,9 +2,11 @@
 # Date: 1/25/2016
 # Authon: Brian Aggrey
 from flask import (Flask, request)
+from flask.ext.cors import CORS
 import subprocess
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/send_once/")
 # This route accepts a get request containing params
